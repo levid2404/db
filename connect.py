@@ -1,5 +1,6 @@
 import pyodbc
 import tkinter as tk
+from jinja2 import Template
 
 root = tk.Tk()
 root.title("Enter Data")
@@ -90,6 +91,13 @@ for row in rows:
 cursor.close()
 cnxn.close()
 
+while True:
+    with open('index.html') as file:
+        template_content = file.read()
+        template = Template(template_content)
+        rendered_content = template.render(rows=rows)
+    with open('rendered.html','w') as file:
+        file.write(rendered_content)
 
 
 

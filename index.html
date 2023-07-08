@@ -5,3 +5,31 @@
 <header>
     <div>DRIP Database</div>
 </header>
+
+<body>
+    <h1>Data Display</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Color</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td> 
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
